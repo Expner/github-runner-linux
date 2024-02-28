@@ -1,0 +1,27 @@
+version: "3"
+services:
+
+  runner-forLinux:
+    build: ./forLinux
+    image: git-runner-forLinux
+    environment:
+      - TOKEN=NO5F6TAAMGNIT
+      - URL=https://github.com/Dimitrius-dev/test-actions
+      - NAME=myRunner
+
+  runner-forMacOC:
+    build: ./forMacOS
+    image: git-runner-forMacOS
+    environment:
+      - TOKEN=NO5F6TAAMGNIT
+      - URL=https://github.com/Dimitrius-dev/test-actions
+      - NAME=myRunner
+
+
+  runner-forWindows:
+    build: ./forWindows
+    image: git-runner-forWindows
+    environment:
+      - TOKEN=NO5F6TAAMGNIT
+      - URL=https://github.com/Dimitrius-dev/test-actions
+      - NAME=myRunner

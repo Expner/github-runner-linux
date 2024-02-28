@@ -1,0 +1,28 @@
+name: Code checks
+
+on:
+  push:
+    branches: [testing]
+  pull_request:
+    branches: [testing]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        python-name: [python3]
+        oc-name: [self-hosted]
+    runs-on: ${{ matrix.oc-name }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install python ${{ matrix.python-name }}
+        #run: apt update && apt install ${{ matrix.python-name }} -y
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run tests
+        run: |
+          python3 -m tests.test1
