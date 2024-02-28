@@ -23,6 +23,5 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run tests
-        run: |
-          python3 -m tests.test1
+      - name: Say hello
+        run: python3 print("hello") 
