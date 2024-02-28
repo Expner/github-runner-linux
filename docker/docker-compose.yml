@@ -1,0 +1,42 @@
+version: "3"
+services:
+
+#  runner-for-linux:
+#    build:
+#      context: .
+#      dockerfile: for-linux/Dockerfile
+#    image: git-runner-for-linux
+#    environment:
+#      - TOKEN=A5HCFAGPQLMRPZL34CNBDCLF3423A
+#      - URL=https://github.com/Expner/testGitActions
+#      - NAME=myRunnerLinux
+
+#  runner-forMacOC:
+#   build:
+#      context: .
+#      dockerfile: forMacOS/Dockerfile
+#    image: git-runner-for-macos
+#    environment:
+#      - TOKEN=A5HCFAAHRCPD5SCUZPWHSHDF34DUU
+#      - URL=https://github.com/Expner/testGitActions
+#      - NAME=myRunnerMacOS
+
+
+  runner-for-windows:
+    build:
+      context: .
+      dockerfile: for-windows/Dockerfile
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    stop_grace_period: 2m
+    restart: on-failure
+    environment:
+      - TOKEN=A5HCFAHIRNU7VYC4DUOOEODF35BDI
+      - URL=https://github.com/Expner/testGitActions
+      - NAME=myRunnerWindows
