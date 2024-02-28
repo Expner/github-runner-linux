@@ -2,26 +2,28 @@ version: "3"
 services:
 
   runner-forLinux:
-    build: ./forLinux
-    image: git-runner-forLinux
+    build: #
+    image: git-runner-for-linux
     environment:
-      - TOKEN=A5HCFAAHRCPD5SCUZPWHSHDF34DUU
+      - TOKEN=A5HCFADHAKU4CY7KBVG24ODF34SXU
       - URL=https://github.com/Expner/testGitActions
       - NAME=myRunnerLinux
 
-  runner-forMacOC:
-    build: ./forMacOS
-    image: git-runner-forMacOS
-    environment:
-      - TOKEN=A5HCFAAHRCPD5SCUZPWHSHDF34DUU
-      - URL=https://github.com/Expner/testGitActions
-      - NAME=myRunnerMacOS
+#  runner-forMacOC:
+#   build:
+#      context: .
+#      dockerfile: forMacOS/Dockerfile
+#    image: git-runner-for-macos
+#    environment:
+#      - TOKEN=A5HCFAAHRCPD5SCUZPWHSHDF34DUU
+#      - URL=https://github.com/Expner/testGitActions
+#      - NAME=myRunnerMacOS
 
 
   runner-forWindows:
-    build: ./forWindows
-    image: git-runner-forWindows
+    build: #
+    image: git-runner-for-windows
     environment:
-      - TOKEN=A5HCFAAHRCPD5SCUZPWHSHDF34DUU
+      - TOKEN=A5HCFAGIBFZYKTBYM64NIGDF34RLK
       - URL=https://github.com/Expner/testGitActions
       - NAME=myRunnerWindows
