@@ -1,4 +1,4 @@
-name: Code checks
+name: Runner-pipe
 
 on:
   push:
@@ -16,7 +16,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - name: Install python ${{ matrix.python-name }}
         #run: apt update && apt install ${{ matrix.python-name }} -y
         uses: actions/setup-python@v5
