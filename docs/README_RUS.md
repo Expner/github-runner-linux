@@ -1,4 +1,7 @@
-# kds4wexp/github-actions-linux
+# kds4wexp/github-runner-linux64x
+___
+### DockerHub
++ [DockerHub](https://hub.docker.com/repository/docker/kds4wexp/github-runner-linux64x/general)
 ___
 ### Как использовать этот образ
 Образ может быть развернут двумя способами:
@@ -17,7 +20,7 @@ ___
 version: "3"
 services:
   runner-for-linux:
-    image: kds4wexp/github-actions-linux
+    image: kds4wexp/github-runner-linux64x
     environment:
       - TOKEN={ваш_token}
       - URL={ваш_url}
@@ -26,23 +29,9 @@ services:
 ````
 $ docker-compose up -d --build 
 ````
-ИЛИ
-````
-version: "3"
-services:
-  runner-for-linux:
-    image: kds4wexp/github-actions-linux
-    environment:
-      - TOKEN=your_token
-      - URL=your_url
-      - NAME=runner_name
-````
-````
-$ docker-compose up -d -e TOKEN={ваш_token} -e URL={ваш_url} -e NAME={имя_runner} --build 
-````
 ___
 ### CLI
 Вставьте токен, url и имя вашего раннера в CLI
 ````
-$ docker run -d --name some-github-runner -e TOKEN={ваш_token} -e URL={ваш_url} -e NAME={имя_runner} kds4wexp/github-actions-linux
+$ docker run -d --name some-github-runner -e TOKEN={ваш_token} -e URL={ваш_url} -e NAME={имя_runner} kds4wexp/github-runner-linux64x
 ````

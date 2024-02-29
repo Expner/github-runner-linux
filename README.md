@@ -1,7 +1,10 @@
-# kds4wexp/github-actions-linux
+# kds4wexp/github-runner-linux64x
 ___
 ### Languages
 + [Russian](./docs/README_RUS.md)
+___
+### DockerHub
++ [DockerHub](https://hub.docker.com/repository/docker/kds4wexp/github-runner-linux64x/general)
 ___
 ### How to use this image
 The image can be deployed in two ways:
@@ -20,7 +23,7 @@ Paste your token and url and name your runner into docker-compose.yml
 version: "3"
 services:
   runner-for-linux:
-    image: kds4wexp/github-actions-linux
+    image: kds4wexp/github-runner-linux64x
     environment:
       - TOKEN={your_token}
       - URL={your_url}
@@ -29,23 +32,9 @@ services:
 ````
 $ docker-compose up -d --build
 ````
-OR
-````
-version: "3"
-services:
-  runner-for-linux:
-    image: kds4wexp/github-actions-linux
-    environment:
-      - TOKEN=your_token
-      - URL=your_url
-      - NAME=runner_name
-````
-````
-$ docker-compose up -d -e TOKEN={your_token} -e URL={your_url} -e NAME={runner_name} --build 
-````
 ___
 ### CLI
 Paste your token and url and name your runner into CLI
 ````
-$ docker run -d --name some-github-runner -e TOKEN={your_token} -e URL={your_url} -e NAME={runner_name} kds4wexp/github-actions-linux
+$ docker run -d --name some-github-runner -e TOKEN={your_token} -e URL={your_url} -e NAME={runner_name} kds4wexp/github-runner-linux64x
 ````
