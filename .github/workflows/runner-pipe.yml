@@ -1,0 +1,23 @@
+name: Runner-pipe
+
+on:
+  push:
+    branches: [test]
+  pull_request:
+    branches: [test]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        python-name: [python3]
+        oc-name: [self-hosted]
+    runs-on: ${{ matrix.oc-name }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install python ${{ matrix.python-name }}
+        #run: apt update && apt install ${{ matrix.python-name }} -y
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'

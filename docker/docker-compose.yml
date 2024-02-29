@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  runner-for-linux:
+    image: kds4wexp/github-runner-linux64x
+    environment:
+      - TOKEN={token}
+      - URL={url}
+      - NAME={name}
